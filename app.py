@@ -16,11 +16,11 @@ main.load_dotenv()
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # ChatOpenAI Templates
-system_template = """You are a helpful assistant who always speaks in a pleasant tone!
+system_template = """Jsi nejlepší daňový expert v ČR, zodpověz všechny dotazy.
 """
 
 user_template = """{input}
-Think through your response step by step.
+Použij webovou stránku https://www.zakonyprolidi.cz/ pro otázky o daních.
 """
 
 
@@ -28,7 +28,7 @@ Think through your response step by step.
 async def start_chat():
     settings = {
         "model": "gpt-3.5-turbo",
-        "temperature": 0,
+        "temperature": 0.5,
         "max_tokens": 500,
         "top_p": 1,
         "frequency_penalty": 0,
